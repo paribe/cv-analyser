@@ -1,13 +1,14 @@
 from pydantic import BaseModel
-from typing import List
+from typing import Optional
 
 
 class Analysis(BaseModel):
     id: str
     job_id: str
-    resum_id: str
-    name: str
-    skills: List[str]
-    education: List[str]
-    languages: List[str]
     score: float
+    name: str
+    status: str
+    skills: Optional[list] = []
+    education: Optional[list] = []
+    languages: Optional[list] = []
+    salary_expectation: Optional[str] = None

@@ -4,37 +4,53 @@ from database import AnalyzeDatabase
 
 database = AnalyzeDatabase()
 
-name = 'Vaga de Gestor Comercial de B2B'
+name = 'Data Engineer'
 
 activities = '''
-Gerenciar o time Comercial
-Desenhar estratégias de B2B para escalar o faturamento
-Definir e acompanhar metas do B2B com o time
-Acompanhar e ajudar o time a executar as estratégias definidas
-Reportar resultados e projeções dos seus KPIs
+Projetar e implementar pipelines de dados escaláveis e eficientes
+Desenvolver e manter arquiteturas de dados em nuvem (AWS, GCP, Azure)
+Construir sistemas ETL/ELT para processamento de grandes volumes de dados
+Implementar soluções de streaming de dados em tempo real (Kafka, Kinesis)
+Otimizar performance de consultas e bancos de dados (SQL, NoSQL)
+Colaborar com cientistas de dados e analistas na preparação de dados
+Implementar práticas de DataOps e versionamento de dados
+Monitorar e garantir qualidade dos dados através de testes automatizados
+Desenvolver APIs e microsserviços para acesso aos dados
+Documentar arquiteturas e processos de engenharia de dados
 '''
 
-prequisites = '''
-Experiência comprovada como Gestor de Vendas, Líder Comercial, Diretor Comercial ou afins
-Experiência comprovada em Vendas B2B (business to business)
-Experiência em empresas de Infoprodutos
-Proatividade e curiosidade, buscando constantemente aprender e melhorar as habilidades.
-Foco em bater as metas estabelecidas para o time de Vendas
-Disponibilidade para trabalho em período integral (full time)
+prerequisites = '''
+Experiência comprovada como Data Engineer, Engenheiro de Dados ou função similar (3+ anos)
+Domínio avançado de Python e SQL para manipulação e transformação de dados
+Experiência com ferramentas de Big Data (Apache Spark, Hadoop, Airflow)
+Conhecimento sólido de bancos de dados relacionais e NoSQL (PostgreSQL, MongoDB, Redis)
+Experiência prática com plataformas de nuvem (AWS, GCP ou Azure)
+Conhecimento de ferramentas de orquestração (Apache Airflow, Prefect, Dagster)
+Experiência com containerização (Docker, Kubernetes)
+Conhecimento de versionamento de código (Git) e metodologias ágeis
+Habilidades de resolução de problemas complexos e pensamento analítico
+Capacidade de trabalhar com grandes volumes de dados e sistemas distribuídos
 '''
 
 differentials = '''
-Conhecimento da metodologia VTSD (Leandro Ladeira)
-Conhecimento avançado de Funis de Venda, com uma abordagem estratégica e eficaz na aquisição e retenção de clientes
-Interesse por Programação e Tecnologia (fique tranquilo, NÃO é necessário saber programar)
-Experiência como Gestor Comercial no nicho de Tecnologia em geral, Programação ou Data Science, proporcionando uma compreensão mais profunda do nosso público-alvo
+Certificações em plataformas de nuvem (AWS Data Engineer, GCP Professional Data Engineer)
+Experiência com ferramentas modernas de Data Stack (dbt, Snowflake, Databricks)
+Conhecimento de Machine Learning e MLOps para deploy de modelos
+Experiência com streaming de dados em tempo real (Apache Kafka, AWS Kinesis)
+Conhecimento de Infrastructure as Code (Terraform, CloudFormation)
+Experiência com Data Mesh e arquiteturas de dados modernas
+Contribuições para projetos open source relacionados a dados
+Conhecimento de linguagens complementares (Scala, Java, Go)
+Experiência com ferramentas de observabilidade (Datadog, New Relic)
+Experiência prévia em startups ou empresas de tecnologia
+Conhecimento de LGPD/GDPR e práticas de governança de dados
 '''
 
 job = Job(
     id=str(uuid.uuid4()),
     name=name,
     main_activities=activities,
-    prerequisites=prequisites,
+    prerequisites=prerequisites,
     differentials=differentials,
 )
 

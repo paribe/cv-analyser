@@ -49,3 +49,9 @@ class AnalyzeDatabase(TinyDB):
         file = Query()
         self.analysis.remove(file.job_id == job_id)
 
+    def delete_job_by_id(self, job_id):
+        # Remover uma vaga específica pelo ID
+        job = Query()
+        self.jobs.remove(job.id == job_id)
+
+
