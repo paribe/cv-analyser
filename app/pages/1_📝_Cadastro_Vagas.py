@@ -12,7 +12,7 @@ from analyze.models.job import Job
 from analyze.database import AnalyzeDatabase
 
 st.set_page_config(
-    page_title="Cadastro de Vagas - CV Analyzer",
+    page_title="Cadastro de Vagas - Currículo Inteligente",
     page_icon="📝",
     layout="wide"
 )

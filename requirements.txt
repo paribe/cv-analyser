@@ -28,6 +28,7 @@ idna==3.10
 importlib_resources==6.5.2
 isodate==0.6.1
 Jinja2==3.1.6
+jiter==0.10.0
 jsonpatch==1.33
 jsonpointer==3.0.0
 jsonschema==4.24.0
@@ -43,6 +44,7 @@ networkx==3.4.2
 nibabel==5.3.2
 nipype==1.10.0
 numpy==2.2.6
+openai==1.86.0
 orjson==3.10.18
 packaging==24.2
 pandas==2.2.3
@@ -84,6 +86,7 @@ tenacity==9.1.2
 tinydb==4.8.2
 toml==0.10.2
 tornado==6.5.1
+tqdm==4.67.1
 traits==7.0.2
 typing-inspection==0.4.1
 typing_extensions==4.13.2
