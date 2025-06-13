@@ -26,7 +26,8 @@ database = AnalyzeDatabase()
 # Função para excluir vaga
 def delete_job(job_id):
     database.delete_job_by_id(job_id)
-    st.experimental_rerun()
+    st.rerun()
+
 
 # Formulário de cadastro
 with st.form("form_vaga"):
