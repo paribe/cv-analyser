@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st 
 import sys
 import os
 import uuid
@@ -23,11 +23,15 @@ st.markdown("---")
 # Inicializar o banco de dados
 database = AnalyzeDatabase()
 
+# Exibir mensagem de sucesso após recarregar a página
+if st.session_state.get("vaga_cadastrada"):
+    st.success("✅ Vaga cadastrada com sucesso!")
+    st.session_state["vaga_cadastrada"] = False  # resetar o estado
+
 # Função para excluir vaga
 def delete_job(job_id):
     database.delete_job_by_id(job_id)
     st.rerun()
-
 
 # Formulário de cadastro
 with st.form("form_vaga"):
@@ -55,12 +59,13 @@ with st.form("form_vaga"):
                     prerequisites=pre_requisitos,
                     differentials=diferenciais
                 )
-                
                 # Salvar no banco de dados
                 database.jobs.insert(job.model_dump())
-                st.success("✅ Vaga cadastrada com sucesso!")
-                st.experimental_rerun() # Recarregar a página para mostrar a nova vaga
-                
+
+                # Marcar estado para exibir mensagem após rerun
+                st.session_state["vaga_cadastrada"] = True
+                st.rerun()
+
             except Exception as e:
                 st.error(f"❌ Erro ao cadastrar vaga: {str(e)}")
         else:
@@ -70,7 +75,6 @@ with st.form("form_vaga"):
 st.markdown("---")
 st.subheader("Vagas Cadastradas")
 
-# Buscar vagas no banco de dados usando o método correto do TinyDB
 vagas = database.jobs.all()
 
 if vagas:
@@ -87,10 +91,9 @@ if vagas:
         with col2:
             if st.button("Excluir", key=f"delete_{vaga['id']}"):
                 delete_job(vaga['id'])
-
 else:
     st.info("Nenhuma vaga cadastrada ainda.")
 
 # Botão para voltar ao menu principal
 if st.button("Voltar ao Menu Principal"):
-    st.switch_page("Home.py") 
+    st.switch_page("Home.py")
